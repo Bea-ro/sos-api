@@ -1,1 +1,6 @@
 Endpoints:
+GET
+GET
+POST
+PUT
+DELETE

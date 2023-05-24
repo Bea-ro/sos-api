@@ -4,7 +4,11 @@ const AuthorSchema = new mongoose.Schema(
     {
 		name: {type: String, required: true, trim: true},
 		style: {type: String, required: true, trim: true},
-		// ver enum para mainArtworks: {type: String, required: true}
+		mainArtworks: {
+			type: String,
+			enum: ['painting', 'sculpture', 'arquitecture'],
+			required: true
+		  }
 	},
 	{
 		timestamps: true, collection: "authors" 
@@ -28,6 +32,7 @@ const ArtworkSchema = new mongoose.Schema(
 const Artwork = mongoose.model('Artwork', ArtworkSchema)
 
 module.exports = {Author, Artwork}
+
 
 
 

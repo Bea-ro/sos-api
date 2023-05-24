@@ -1,9 +1,9 @@
 const dotenv =require('dotenv').config()
 const mongoose = require('mongoose')
 
-// mongoose.set('strict', false)
-// mongoose.set('strictPopulate', false)
-// mongoose.set('strictQuery', false);
+mongoose.set('strict', false)
+mongoose.set('strictPopulate', false)
+mongoose.set('strictQuery', false);
 
 const connect = async() => {
 try {
