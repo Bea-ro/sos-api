@@ -1,5 +1,11 @@
 const express = require('express')
-const {getAllArtworks, createArtwork, getArtworkById, updateArtworkById, deleteArtwork} = require('../controllers/artworks')
+const {
+  getAllArtworks,
+  createArtwork,
+  getArtworkById,
+  updateArtworkById,
+  deleteArtwork,
+} = require('../controllers/artworks')
 const router = express.Router()
 
 router.get('/', getAllArtworks)

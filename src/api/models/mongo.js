@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+/* eslint-disable linebreak-style */
+
+const mongoose = require('mongoose');
 
 const AuthorSchema = new mongoose.Schema(
   {
@@ -35,8 +37,8 @@ const ArtworkSchema = new mongoose.Schema(
     timestamps: true,
     collection: 'artworks',
   }
-)
+);
 
-const Artwork = mongoose.model('Artwork', ArtworkSchema)
+const Artwork = mongoose.model('Artwork', ArtworkSchema);
 
-module.exports = { Author, Artwork }
+module.exports = { Author, Artwork };
