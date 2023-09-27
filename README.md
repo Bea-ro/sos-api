@@ -1,3 +1,11 @@
+> API Rest de arte con dos modelos (obras y autores)
+
+## Skills
+
+### Javascript, MongoDB, Express, React, Node (MERN)
+Dos modelos con **CRUD** completo.
+
+
 ## Endpoints relativos a https://localhost:4001/api
 
 Prueba página no encontrada: https://localhost:4001/api/autor
