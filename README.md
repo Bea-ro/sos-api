@@ -3,7 +3,8 @@
 ## Skills
 
 ### Javascript, MongoDB, Express, React, Node (MERN)
-Dos modelos con **CRUD** completo.
+- Dos modelos con **CRUD** completo.
+- Configuración y uso de **Eslint** y **Prettier**.
 
 
 ## Endpoints relativos a https://localhost:4001/api
