@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config()
+require('dotenv').config()
 const mongoose = require('mongoose')
 
 mongoose.set('strict', false)
@@ -8,9 +8,9 @@ mongoose.set('strictQuery', false)
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URL)
-    console.error('Conectado a BD')
+    console.log('Conectado a BD')
   } catch (error) {
-    console.error(error, 'No conectado a BD')
+    console.log(error, 'No conectado a BD')
   }
 }
 
