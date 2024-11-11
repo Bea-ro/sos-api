@@ -11,6 +11,11 @@ const createProductInDB = async (payload) => {
   return newProduct
 }
 
+const updateProductInDB = async (id, payload) => {
+  const product = await Product.findByIdAndUpdate(id, payload, { new: true })
+  return product
+}
+
 const deleteProductInDB = async (id) => {
   await Product.findByIdAndDelete(id)
 }
@@ -18,5 +23,6 @@ const deleteProductInDB = async (id) => {
 module.exports = {
   getAllProductsFromDB,
   createProductInDB,
+  updateProductInDB,
   deleteProductInDB,
 }
