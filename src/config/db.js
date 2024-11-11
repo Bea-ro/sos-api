@@ -7,7 +7,10 @@ mongoose.set('strictQuery', false)
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL)
+    await mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     console.log('Conectado a BD')
   } catch (error) {
     console.log(error, 'No conectado a BD')

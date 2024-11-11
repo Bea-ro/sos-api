@@ -6,9 +6,9 @@ const ProductSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
     image: { type: String, required: false, trim: true },
-    isRequired: { type: Boolean, required: true },
-    isDonated: { type: Boolean, required: true },
-    locations: { type: [String], required: true },
+    isRequired: { type: Boolean, required: true, default: true },
+    isDonated: { type: Boolean, required: true, default: false },
+    location: { type: [String], required: true },
   },
   {
     timestamps: true,

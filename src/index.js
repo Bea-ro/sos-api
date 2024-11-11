@@ -1,10 +1,20 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 require('./config/db')
 const mainRouter = require('./api/routes/index')
 const { connect } = require('./config/db')
 
 const app = express()
+
+// const corsOptions = {
+//   origin: 'https://www.sosaquihoy.com',
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true, // Permitir cookies
+//   };
+
+app.use(cors())
 
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ limit: '5mb', extended: false }))
