@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.get('/', getAllProducts)
 router.post('/', createProduct)
-router.put('/', updateProduct)
+router.put('/:name', updateProduct)
 router.delete('/:id', deleteProduct)
 
 module.exports = router

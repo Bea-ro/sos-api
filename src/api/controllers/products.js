@@ -15,19 +15,23 @@ const getAllProducts = async (req, res, next) => {
 const createProduct = async (req, res, next) => {
   const newProduct = await createProductInDB({
     name: req.body.name,
-    location: [req.body.location],
+    locations: req.body.locations,
   })
-  res.status(201).json({ data: newProduct })
+  res.status(201).json(newProduct)
 }
 
 const updateProduct = async (req, res, next) => {
-  const { id } = req.params
-  const { isRequired } = req.body
+  const { name } = req.params
+  const { isRequired, locations } = req.body
+
   try {
-    const product = await updateProductInDB(id, { isRequired })
-    res.status(200).json({ data: product })
+    const product = await updateProductInDB(name, {
+      $set: { isRequired },
+      $push: { locations: { $each: locations } },
+    })
+    res.status(200).json({ product })
   } catch (err) {
-    res.status(404).json({ data: 'Producto no encontrado' })
+    res.status(404).json('Producto no encontrado')
   }
 }
 
@@ -35,9 +39,9 @@ const deleteProduct = async (req, res, next) => {
   const { id } = req.params
   try {
     await deleteProductInDB(id)
-    res.status(200).json({ data: 'Producto borrado' })
+    res.status(200).json('Producto borrado')
   } catch (err) {
-    res.status(404).json({ data: 'Producto no encontrado' })
+    res.status(404).json('Producto no encontrado')
   }
 }
 

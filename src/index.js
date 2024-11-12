@@ -9,7 +9,7 @@ const app = express()
 
 // const corsOptions = {
 //   origin: 'https://www.sosaquihoy.com',
-//   methods: ['GET', 'POST'],
+//   methods: ['GET', 'POST','PUT'],
 //   allowedHeaders: ['Content-Type', 'Authorization'],
 //   credentials: true, // Permitir cookies
 //   };
