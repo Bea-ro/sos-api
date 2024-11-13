@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 
+const Product = require('../models/mongo')
 const {
   getAllProductsFromDB,
   createProductInDB,
@@ -22,14 +23,13 @@ const createProduct = async (req, res, next) => {
 
 const updateProduct = async (req, res, next) => {
   const { name } = req.params
-  const { isRequired, locations } = req.body
-
+  const { location } = req.body
   try {
     const product = await updateProductInDB(name, {
-      $set: { isRequired },
-      $push: { locations: { $each: locations } },
+      $push: { locations: location },
     })
-    res.status(200).json({ product })
+    console.log(product)
+    res.status(200).json(product)
   } catch (err) {
     res.status(404).json('Producto no encontrado')
   }

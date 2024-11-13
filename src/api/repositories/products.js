@@ -11,8 +11,8 @@ const createProductInDB = async (payload) => {
   return newProduct
 }
 
-const updateProductInDB = async ({ name }, payload) => {
-  const product = await Product.findOneAndUpdate(name, payload, { new: true })
+const updateProductInDB = async (name, payload) => {
+  const product = await Product.findOneAndUpdate({ name }, payload, { new: true })
   return product
 }
 
